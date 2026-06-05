@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FF Sensitivity Pro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      color: white;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ff0000, #ff6a00);
+      text-align: center;
+      padding: 18px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 15px;
+    }
+
+    .card {
+      background: #222;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255,0,0,0.3);
+    }
+
+    select, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      background: #00c853;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00e676;
+    }
+
+    .result {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #00ffcc;
+      text-align: center;
+    }
+
+    .copyBtn {
+      background: #2196f3;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>🔥 FF Sensitivity Generator Pro</header>
+
+<div class="container">
+
+  <div class="card">
+
+    <h3>Select Brand</h3>
+    <select id="brand">
+      <option>Vivo</option>
+      <option>iPhone</option>
+      <option>Redmi</option>
+      <option>Samsung</option>
+    </select>
+
+    <h3>Select Model</h3>
+    <select id="model">
+      <option>Basic Model</option>
+      <option>Mid Range</option>
+      <option>High End</option>
+    </select>
+
+    <button onclick="generate()">Generate Sensitivity</button>
+
+    <div class="result" id="result"></div>
+
+    <button class="copyBtn" onclick="copyText()">Copy Result</button>
+
+  </div>
+
+</div>
+
+<script>
+let lastResult = "";
+
+function generate() {
+  let brand = document.getElementById("brand").value;
+  let model = document.getElementById("model").value;
+
+  let sens1 = Math.floor(Math.random() * 50 + 150);
+  let sens2 = Math.floor(Math.random() * 50 + 160);
+  let sens3 = Math.floor(Math.random() * 50 + 170);
+  let sens4 = Math.floor(Math.random() * 50 + 180);
+
+  lastResult =
+    brand + " (" + model + ")\n" +
+    "General: " + sens1 + "\n" +
+    "Red Dot: " + sens2 + "\n" +
+    "2x Scope: " + sens3 + "\n" +
+    "4x Scope: " + sens4;
+
+  document.getElementById("result").innerText = lastResult;
+}
+
+function copyText() {
+  navigator.clipboard.writeText(lastResult);
+  alert("Copied!");
+}
+</script>
+
+</body>
+</html>
