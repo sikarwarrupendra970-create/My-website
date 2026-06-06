@@ -1,131 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>FF Sensitivity Pro</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FF Sensi Pro</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-      color: white;
-    }
+<link rel="stylesheet" href="style.css">
 
-    header {
-      background: linear-gradient(90deg, #ff0000, #ff6a00);
-      text-align: center;
-      padding: 18px;
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    .container {
-      padding: 15px;
-    }
-
-    .card {
-      background: #222;
-      padding: 15px;
-      margin-top: 15px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(255,0,0,0.3);
-    }
-
-    select, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      border-radius: 8px;
-      border: none;
-      font-size: 16px;
-    }
-
-    button {
-      background: #00c853;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #00e676;
-    }
-
-    .result {
-      margin-top: 15px;
-      font-size: 18px;
-      color: #00ffcc;
-      text-align: center;
-    }
-
-    .copyBtn {
-      background: #2196f3;
-      margin-top: 10px;
-    }
-  </style>
 </head>
 
 <body>
 
-<header>🔥 FF Sensitivity Generator Pro</header>
+<header>
+
+<h1>🔥 FF Sensi Pro 🔥</h1>
+
+<p>Best Free Fire Sensitivity Generator</p>
+
+</header>
 
 <div class="container">
 
-  <div class="card">
+<h2>Select Phone Brand</h2>
 
-    <h3>Select Brand</h3>
-    <select id="brand">
-      <option>Vivo</option>
-      <option>iPhone</option>
-      <option>Redmi</option>
-      <option>Samsung</option>
-    </select>
+<select id="brand">
 
-    <h3>Select Model</h3>
-    <select id="model">
-      <option>Basic Model</option>
-      <option>Mid Range</option>
-      <option>High End</option>
-    </select>
+<option>Vivo</option>
 
-    <button onclick="generate()">Generate Sensitivity</button>
+<option>Samsung</option>
 
-    <div class="result" id="result"></div>
+<option>Redmi</option>
 
-    <button class="copyBtn" onclick="copyText()">Copy Result</button>
+<option>Realme</option>
 
-  </div>
+<option>OPPO</option>
+
+<option>OnePlus</option>
+
+<option>iPhone</option>
+
+</select>
+
+<h2>Select RAM</h2>
+
+<select id="ram">
+
+<option>2 GB</option>
+
+<option>3 GB</option>
+
+<option>4 GB</option>
+
+<option>6 GB</option>
+
+<option>8 GB</option>
+
+<option>12 GB</option>
+
+</select>
+
+<button onclick="generate()">
+
+Generate Sensitivity
+
+</button>
+
+<div id="result">
 
 </div>
 
-<script>
-let lastResult = "";
+</div>
 
-function generate() {
-  let brand = document.getElementById("brand").value;
-  let model = document.getElementById("model").value;
+<footer>
 
-  let sens1 = Math.floor(Math.random() * 50 + 150);
-  let sens2 = Math.floor(Math.random() * 50 + 160);
-  let sens3 = Math.floor(Math.random() * 50 + 170);
-  let sens4 = Math.floor(Math.random() * 50 + 180);
+Made By FF Sensi Pro
 
-  lastResult =
-    brand + " (" + model + ")\n" +
-    "General: " + sens1 + "\n" +
-    "Red Dot: " + sens2 + "\n" +
-    "2x Scope: " + sens3 + "\n" +
-    "4x Scope: " + sens4;
+</footer>
 
-  document.getElementById("result").innerText = lastResult;
-}
-
-function copyText() {
-  navigator.clipboard.writeText(lastResult);
-  alert("Copied!");
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
